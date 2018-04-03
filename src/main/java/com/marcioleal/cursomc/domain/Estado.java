@@ -33,8 +33,7 @@ public class Estado implements Serializable {
    private List<Cidade> cidades = new ArrayList<Cidade>();
 
    
-   
-   
+    
    public List<Cidade> getCidades() {
 	return cidades;
    }
