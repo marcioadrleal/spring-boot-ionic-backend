@@ -1,8 +1,10 @@
 package com.marcioleal.cursomc.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -12,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -37,10 +40,31 @@ public class Pedido implements Serializable {
   @JoinColumn(name="endereco_entrega_id")
   private Endereco enderecoDeEntrega;
   
-  private Set<ItemPedido> itens = new HashSet<>();
+  
+  @OneToMany(mappedBy="id.pedido")
+  private Set<ItemPedido> itens = new HashSet<ItemPedido>();
   
   
-  public Pedido() {
+  public List<Produto> getProdutos(){
+	List<Produto> lista = new ArrayList<Produto>();
+	for(ItemPedido x : itens) {
+	  lista.add(x.getProduto());	
+	}
+	return lista;  
+  }
+  
+  
+  public Set<ItemPedido> getItens() {
+	return itens;
+}
+
+
+public void setItens(Set<ItemPedido> itens) {
+	this.itens = itens;
+}
+
+
+public Pedido() {
 	  
   }
 
