@@ -1,5 +1,7 @@
 package com.marcioleal.cursomc.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -25,6 +27,11 @@ public class CategoriaService {
 	  obj.setId(null);	
 	  return repo.save(obj);	
 	}
+	
+	public List<Categoria> findAll(){
+	  return repo.findAll();	
+	}
+	
 	
 	
 	public Categoria update(Categoria obj) {
