@@ -7,8 +7,8 @@ public class StandardError implements Serializable {
   /**
 	 * 
 	 */
-	private static final long serialVersionUID = -387927137628335119L;
-private Integer status;
+  private static final long serialVersionUID = -387927137628335119L;
+  private Integer status;
   private String msg;
   private Long timeStamp;
   
