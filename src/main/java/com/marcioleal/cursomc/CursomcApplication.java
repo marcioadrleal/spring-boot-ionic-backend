@@ -94,7 +94,7 @@ public class CursomcApplication implements CommandLineRunner{
 	  
 	 
 	  
-	  categoriaRepositiry.save(Arrays.asList(cat1,cat2));
+	  categoriaRepositiry.save(Arrays.asList(cat1,cat2,cat3,cat4,cat5,cat6,cat7));
 	  produtoRepository.save(Arrays.asList(p1,p2,p3,p4));
 	  
 	  Estado est1 = new Estado(null,"Minas Gerais");
