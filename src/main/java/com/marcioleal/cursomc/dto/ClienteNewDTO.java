@@ -2,6 +2,9 @@ package com.marcioleal.cursomc.dto;
 
 import java.io.Serializable;
 
+import com.marcioleal.cursomc.services.validation.ClienteInsert;
+
+@ClienteInsert
 public class ClienteNewDTO implements Serializable {
 
   /**
