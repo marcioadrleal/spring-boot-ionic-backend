@@ -84,6 +84,16 @@ public Pedido() {
 	this.enderecoDeEntrega = enderecoDeEntrega;
   }
 
+  
+  public double valorTotal() {
+	double soma = 0;
+	for ( ItemPedido ip : itens ) {
+	  soma = soma + ip.getSubTotal();	
+	}
+	
+	return soma;
+	
+  }
 
 public Integer getId() {
 	return id;
