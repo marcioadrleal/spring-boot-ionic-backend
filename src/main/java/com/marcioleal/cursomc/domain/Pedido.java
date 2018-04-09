@@ -170,6 +170,22 @@ public boolean equals(Object obj) {
 		return false;
 	return true;
 }
+
+
+@Override
+public String toString() {
+	StringBuilder builder = new StringBuilder();
+	builder.append("Pedido [instante=");
+	builder.append(instante);
+	builder.append(", pagamento=");
+	builder.append(pagamento);
+	builder.append(", cliente=");
+	builder.append(cliente);
+	builder.append(", enderecoDeEntrega=");
+	builder.append(enderecoDeEntrega);
+	builder.append("]");
+	return builder.toString();
+}
   
   
   
