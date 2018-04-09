@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.marcioleal.cursomc.domain.enums.TipoCliente;
 
@@ -30,6 +31,9 @@ public class Cliente implements Serializable {
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
   private Integer id;	
+  
+  @JsonIgnore
+  private String senha;
   
   private String nome;
   
@@ -56,13 +60,14 @@ public class Cliente implements Serializable {
 	  
   }
 
-  public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo) {
+  public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo , String senha) {
 	super();
 	this.id = id;
 	this.nome = nome;
 	this.email = email;
 	this.cpfOuCnpj = cpfOuCnpj;
 	this.tipo = (tipo == null ) ? null : tipo.getCod();
+	this.senha = senha;
   }
 
 public Integer getId() {
@@ -152,6 +157,14 @@ public List<Pedido> getPedidos() {
 
 public void setPedidos(List<Pedido> pedidos) {
 	this.pedidos = pedidos;
+}
+
+public String getSenha() {
+	return senha;
+}
+
+public void setSenha(String senha) {
+	this.senha = senha;
 }
   
   
